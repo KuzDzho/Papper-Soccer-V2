@@ -488,8 +488,8 @@ namespace PaperSoccer.Native
             DrawTextField(new Rect(left + nameW + nameGap, h * 0.617f, nameW, 32), ref teamNames[1]);
 
             DrawButton(new Rect(left, h * 0.686f, contentW, 56), "НАЧАТЬ МАТЧ", AccentGreen, Hex("#10180F"), true, StartMatch);
-            DrawButton(new Rect(left, h * 0.762f, (contentW - gap) / 2, 43), "ПРАВИЛА", PanelAlt, Ink, false, () => { rulesOpen = true; PlayUiSound(); });
-            DrawButton(new Rect(left + (contentW + gap) / 2, h * 0.762f, (contentW - gap) / 2, 43), soundOn ? "ЗВУК: ВКЛ" : "ЗВУК: ВЫКЛ", PanelAlt, Ink, false, () => { soundOn = !soundOn; SavePreferences(); PlayUiSound(); });
+            DrawButton(new Rect(left, h * 0.762f, (contentW - gap) / 2, 43), "ПРАВИЛА", PanelAlt, Ink, true, () => { rulesOpen = true; PlayUiSound(); });
+            DrawButton(new Rect(left + (contentW + gap) / 2, h * 0.762f, (contentW - gap) / 2, 43), soundOn ? "ЗВУК: ВКЛ" : "ЗВУК: ВЫКЛ", PanelAlt, Ink, true, () => { soundOn = !soundOn; SavePreferences(); PlayUiSound(); });
 
             int wins = PlayerPrefs.GetInt("psn." + difficulty + ".wins", 0);
             int losses = PlayerPrefs.GetInt("psn." + difficulty + ".losses", 0);
@@ -501,9 +501,9 @@ namespace PaperSoccer.Native
         {
             float w = virtualWidth, h = virtualHeight;
             ArenaStyle style = CurrentArena;
-            DrawButton(new Rect(16, 15, 76, 34), "‹ МЕНЮ", PanelAlt, Ink, false, ReturnToMenu, 10);
+            DrawButton(new Rect(16, 15, 76, 34), "‹ МЕНЮ", PanelAlt, Ink, true, ReturnToMenu, 10);
             DrawText(new Rect(94, 15, w - 188, 34), "БУМАЖНЫЙ ФУТБОЛ", 14, Ink, TextAnchor.MiddleCenter, true);
-            DrawButton(new Rect(w - 94, 15, 78, 34), soundOn ? "ЗВУК ●" : "ЗВУК ○", PanelAlt, Ink, false, () => { soundOn = !soundOn; SavePreferences(); PlayUiSound(); }, 9);
+            DrawButton(new Rect(w - 94, 15, 78, 34), soundOn ? "ЗВУК ●" : "ЗВУК ○", PanelAlt, Ink, true, () => { soundOn = !soundOn; SavePreferences(); PlayUiSound(); }, 9);
 
             float cardY = 58, cardH = 54, cardGap = 8, cardW = (w - 32 - cardGap) / 2;
             DrawRect(new Rect(16, cardY, cardW, cardH), Panel);
@@ -651,7 +651,7 @@ namespace PaperSoccer.Native
             DrawRect(panel, Panel);
             DrawBorder(panel, new Color(AccentGreen.r, AccentGreen.g, AccentGreen.b, 0.65f), 1.2f);
             DrawText(new Rect(panel.x + 18, panel.y + 15, panel.width - 80, 42), "ПРАВИЛА ИГРЫ", 22, Ink, TextAnchor.MiddleLeft, true);
-            DrawButton(new Rect(panel.x + panel.width - 63, panel.y + 18, 45, 34), "ЗАКРЫТЬ", PanelAlt, Ink, false, () => { rulesOpen = false; PlayUiSound(); }, 8);
+            DrawButton(new Rect(panel.x + panel.width - 63, panel.y + 18, 45, 34), "ЗАКРЫТЬ", PanelAlt, Ink, true, () => { rulesOpen = false; PlayUiSound(); }, 8);
             float y = panel.y + 74, textW = panel.width - 36;
             DrawText(new Rect(panel.x + 18, y, textW, 48), "ЦЕЛЬ\nЗабей мяч в ворота соперника и первым набери установленное количество очков. Цвет ворот соответствует команде, которая получает очко при попадании.", 12, Ink, TextAnchor.UpperLeft, false); y += 78;
             DrawText(new Rect(panel.x + 18, y, textW, 77), "ХОД\nЗа ход можно провести до трех линий. Мяч перемещается в соседнюю точку по горизонтали, вертикали или диагонали. После третьей линии ход переходит сопернику. После первой или второй линии можно нажать «Конец хода».", 12, Ink, TextAnchor.UpperLeft, false); y += 108;
