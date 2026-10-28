@@ -140,7 +140,7 @@ namespace PaperSoccer.Native
             inputTexture = MakeSolidTexture(Panel);
             circle = MakeCircle(64, false);
             softCircle = MakeCircle(96, true);
-            invisibleButton = new GUIStyle(GUI.skin.button)
+            invisibleButton = new GUIStyle()
             {
                 padding = new RectOffset(0, 0, 0, 0), margin = new RectOffset(0, 0, 0, 0),
                 border = new RectOffset(0, 0, 0, 0), fontSize = 1
