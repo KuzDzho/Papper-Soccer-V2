@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!129 &1
+PlayerSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 28
+  productGUID: c81e4b320ebc4df7a9d7d3cbd7a8f601
+  companyName: KuzDzho
+  productName: Бумажный футбол
+  defaultScreenWidth: 480
+  defaultScreenHeight: 900
+  m_ShowUnitySplashScreen: 1
+  m_ShowUnitySplashLogo: 1
+  defaultScreenWidthWeb: 960
+  defaultScreenHeightWeb: 600
+  applicationIdentifier:
+    Android: com.kudzho.papersoccer
+  bundleVersion: 1.0.0
+  AndroidBundleVersionCode: 1
+  AndroidMinSdkVersion: 23
+  AndroidTargetSdkVersion: 36
+  AndroidPreferredInstallLocation: 1
+  AndroidTargetArchitectures: 2
+  scriptingRuntimeVersion: 1
+  scriptingBackend:
+    Android: 1
+  apiCompatibilityLevelPerPlatform:
+    Android: 6
+  managedStrippingLevel:
+    Android: 1
+  allowUnsafeCode: 0
+  useDeterministicCompilation: 1
+  stripEngineCode: 1
+  applicationIdentifierGuid:
+    Android: c81e4b320ebc4df7a9d7d3cbd7a8f601
+  AndroidUseCustomKeystore: 0
+  defaultIsNativeResolution: 1
+  androidStartInFullscreen: 1
+  androidRenderOutsideSafeArea: 0
+  androidUseSwappy: 1
+  androidBlitType: 0
+  AndroidFullscreenMode: 1
+  AndroidPredictiveBackSupport: 1
+  allowedAutorotateToPortrait: 1
+  allowedAutorotateToPortraitUpsideDown: 0
+  allowedAutorotateToLandscapeRight: 0
+  allowedAutorotateToLandscapeLeft: 0
+  useOSAutorotation: 0
+  resizableWindow: 0
