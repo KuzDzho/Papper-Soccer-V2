@@ -73,7 +73,17 @@ namespace PaperSoccer.Native.Editor
             PlayerSettings.Android.targetSdkVersion = AndroidSdkVersions.AndroidApiLevel36;
             PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64;
             PlayerSettings.SetScriptingBackend(NamedBuildTarget.Android, ScriptingImplementation.IL2CPP);
+            ApplyApplicationIcon();
             EnsureSceneInBuild();
+        }
+
+        private static void ApplyApplicationIcon()
+        {
+            var icon = AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Art/app_icon.png");
+            if (icon == null) return;
+            int count = PlayerSettings.GetIconSizes(NamedBuildTarget.Android, IconKind.Application).Length;
+            if (count > 0)
+                PlayerSettings.SetIcons(NamedBuildTarget.Android, Enumerable.Repeat(icon, count).ToArray(), IconKind.Application);
         }
 
         private static void EnsureSceneInBuild()
